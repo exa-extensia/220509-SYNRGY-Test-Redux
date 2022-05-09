@@ -6,4 +6,9 @@ const decrementAction = {
 	type: "decrement-count",
 };
 
-export { incrementAction, decrementAction };
+const setCounterAction = (num) => ({
+	type: "set-count",
+	payload: num,
+});
+
+export { incrementAction, decrementAction, setCounterAction };
