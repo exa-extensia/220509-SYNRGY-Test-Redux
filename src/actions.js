@@ -11,4 +11,20 @@ const setCounterAction = (num) => ({
 	payload: num,
 });
 
-export { incrementAction, decrementAction, setCounterAction };
+const addTodoAction = (content) => ({
+	type: "add-todo",
+	payload: content,
+});
+
+const delTodoAction = (content) => ({
+	type: "del-todo",
+	payload: content,
+});
+
+export {
+	incrementAction,
+	decrementAction,
+	setCounterAction,
+	addTodoAction,
+	delTodoAction,
+};

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { decrementAction, setCounterAction } from "./actions";
+import { decrementAction, setCounterAction } from "../actions";
 
-function DecrementBtn(props) {
+function DecrementBtn() {
 	const [inputNum, setInputNum] = useState("");
 	const handlerInputNum = (e) => {
 		setInputNum(e.target.value);

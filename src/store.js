@@ -6,7 +6,7 @@ import reducerToDo from "./reducers/reducerToDo";
 const store = createStore(
 	combineReducers({
 		counter: reducerCounter,
-		todo: reducerToDo,
+		newTodo: reducerToDo,
 	}),
 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );

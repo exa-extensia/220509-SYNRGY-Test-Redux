@@ -3,5 +3,18 @@ const initialState = {
 };
 
 export default function reducerToDo(state = initialState, action) {
-	return state;
+	switch (action.type) {
+		case "add-todo":
+			return {
+				...state,
+				todo: [...state.todo, action.payload],
+			};
+		case "del-todo":
+			return {
+				...state,
+				todo: [action.payload],
+			};
+		default:
+			return state;
+	}
 }
