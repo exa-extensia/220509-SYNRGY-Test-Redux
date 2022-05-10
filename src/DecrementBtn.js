@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import { decrementAction, setCounterAction } from "./actions";
 
 function DecrementBtn(props) {
@@ -10,14 +10,16 @@ function DecrementBtn(props) {
 	const handlerForm = (e) => {
 		e.preventDefault();
 		console.log(inputNum);
-		props.set(inputNum);
+		dispatch(setCounterAction(inputNum));
 	};
+
+	const dispatch = useDispatch();
 
 	return (
 		<div>
 			<button
 				onClick={() => {
-					props.decrementCount();
+					dispatch(decrementAction);
 				}}
 			>
 				decrement
@@ -30,17 +32,4 @@ function DecrementBtn(props) {
 	);
 }
 
-const mapStateToProps = (state) => ({
-	count: state.count,
-});
-
-const mapDispatchToProps = (dispatch, state) => ({
-	decrementCount: () => {
-		dispatch(decrementAction);
-	},
-	set: (num) => {
-		dispatch(setCounterAction(num));
-	},
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(DecrementBtn);
+export default DecrementBtn;
