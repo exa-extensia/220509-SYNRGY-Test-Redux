@@ -3,7 +3,7 @@ import { incrementAction } from "./actions";
 import DecrementBtn from "./DecrementBtn";
 
 function App() {
-	const counter = useSelector((state) => state.count);
+	const counter = useSelector((state) => state.counter.count);
 	const dispatch = useDispatch();
 
 	return (
